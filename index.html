@@ -1,0 +1,82 @@
+<!-- OPTIMATAION ON IMAMGE TO BETTER PERFORMANCE IN WEBSITE AND MORE USER FRIENDLY IMAGES(LOW MEMORY IMAGES) -->
+<!-- STEPS -->
+<!-- 1 USING TINYPNG TO COMPRES BIG IMAGES SIZE TO SMALLER -->
+<!-- 2 USING SRCSET TO LOAD IMAGES ACORDING TO DIVECE PIXEL RATIO -->
+<!-- 3 USING SIZE TO GIVE BETTER SIZE TO HELP BROWSER CHOOSE IMAGE ING SRCSET -->
+<!-- 4 USING PRELOAD TO DOWLOAD BLUR IMG TO IMG BACKGROUND TO DON'T WAIT USERS WITH EMPTY SCREEN WHEN NETWORK SLOW -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="blur_img/duck_blur.jpg" as="image" fetchpriority="high" >
+    <link rel="preload" href="blur_img/rabbit_blur.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="blur_img/parrot_blur.jpg" as="image" fetchpriority="high">
+    
+</head>
+<body>
+    
+    <div class="image-container">
+        <div class="image-box">
+            <img class="duck_img" 
+                src="opt_img/duck1300.jpg"     
+                alt="Animal Image" 
+                style="background-image :url(blur_img/duck_blur.jpg); background-size: cover;"   
+                loading="lazy"
+                srcset="opt_img/duck700.jpg 700w, opt_img/duck1300.jpg 1300w"
+                sizes="(max-width: 768px) 50vw, 100vw">
+        </div>
+
+        <div class="image-box">
+            <img class="parrot_img"  
+                src="opt_img/parrot1300.jpg"   
+                alt="Animal Image" style="background-image :url(blur_img/parrot_blur.jpg); background-size: cover;" 
+                loading="lazy"
+                srcset="opt_img/parrot700.jpg 700w, opt_img/parrot1300.jpg 1300w"
+                sizes="(max-width: 768px) 50vw, 100vw">
+        </div>
+
+        <div class="image-box"><img 
+                class="rabbit_img"  
+                src="opt_img/rabbit1300.jpg"   
+                alt="Animal Image" style="background-image :url(blur_img/rabbit_blur.jpg); background-size: cover;" 
+                loading="lazy"
+                srcset="opt_img/rabbit700.jpg 700w, opt_img/rabbit1300.jpg 1300w"
+                sizes="(max-width: 768px) 50vw, 100vw">
+        </div>
+
+        <div class="image-box"><img 
+             class="duck_img"    src="opt_img/duck1300.jpg"     
+             alt="Animal Image" 
+             style="background-image :url(blur_img/duck_blur.jpg); background-size: cover;"   
+             loading="lazy"
+             srcset="opt_img/duck700.jpg 700w, opt_img/duck1300.jpg 1300w"
+             sizes="(max-width: 768px) 50vw, 100vw">
+        </div>
+
+        <div class="image-box"><img 
+             class="parrot_img"  src="opt_img/parrot1300.jpg"   
+             alt="Animal Image" style="background-image :url(blur_img/parrot_blur.jpg); background-size: cover;" 
+             loading="lazy"
+             srcset="opt_img/parrot700.jpg 700w, opt_img/parrot1300.jpg 1300w"
+             sizes="(max-width: 768px) 50vw, 100vw">   
+        </div>
+
+        <div class="image-box"><img 
+             class="rabbit_img"  
+             src="opt_img/rabbit1300.jpg"   
+             alt="Animal Image" 
+             style="background-image :url(blur_img/rabbit_blur.jpg); background-size: cover;" 
+             loading="lazy"
+             srcset="opt_img/rabbit700.jpg 700w, opt_img/rabbit1300.jpg 1300w"
+             sizes="(max-width: 768px) 50vw, 100vw"
+             >
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
